@@ -1,0 +1,234 @@
+@mixin logo {
+    background: url("../images/logo.png") no-repeat 0 50px;
+    float: left;
+    display: block;
+    margin: 0;
+    width: 400px;
+    height: 190px;
+}
+
+@mixin nav () {
+    width:540px;
+    height:190px;
+    float:left;
+    text-align:right;
+    ul {
+        list-style-type: none;
+        margin-top: 95px;
+        li {
+            display:inline;font-size:0.8em;
+            margin-right:10px;
+            a{
+                color: $orangeRed;
+                text-decoration:none;
+                letter-spacing:-0.01em;
+                &:hover {
+                    color: $white;
+                }
+            }
+        }   
+    }
+}
+
+@mixin header () {
+    width:inherit;
+    clear:both;
+    text-align:center;
+    padding-top:40px;
+}
+
+@mixin contentArea {
+    width: 940px;
+    margin: 20px auto;
+    #products {
+        width: 460px;
+        float: left;
+        h3 {
+            @include grey_h3;
+        }
+        article {
+            margin-bottom: 40px;
+            img {
+                float: left;
+                margin-right: 20px;
+            }
+            h4 {
+                @include line-height(1em);
+            }
+        } 
+    }
+    #testimonials {
+        width: 460px;
+        float: right;
+        h3 {
+            @include grey_h3;
+        }
+    } 
+}
+
+
+@mixin grey_h3 () {
+    color: $grey;
+    font-size: 2em;
+    font-weight: 400;
+}
+
+@mixin line-height ($line-height: 0) {
+    line-height: $line-height;
+}
+
+@mixin coloredBar {
+    width:100%;
+    height:90px;
+    background: $lightGrey;
+    clear:both;
+    padding-top:30px;
+}
+
+@mixin  footerSocial {
+    width:100%;
+    height:120px;
+    background: $darkGrey;
+    text-align:center;
+    color: $white;
+    padding-top:50px;
+    .social-media {
+        margin:0 auto;
+        width:165px;
+        .one    {background:url('../../images/social-media.png') 0 0;}
+        .two 	{background:url('../images/social-media.png') -38px 0;}
+        .three  {background:url('../images/social-media.png') -76px 0;}
+        .four   {background:url('../images/social-media.png') -114px 0;}
+        div {
+            float: left;
+            margin-right: 5px;
+            a   {
+                display: block;
+                width: 36px;
+                height: 36px;
+                text-indent: -9999px;
+            }        
+        }
+    }
+}
+
+@mixin contentProductTestimonials {
+    width:96%;
+    margin:0 2%;
+    float:none;
+}
+
+@mixin mediaScreenMW959px {
+    main {
+        width: 768px;
+        figure {
+            width:inherit;
+            height:140px;
+            float:none;
+            background-position:center; 
+        }
+        nav {
+            width:inherit;
+            height:50px;
+            float:none;
+            text-align:center;
+            ul {
+                margin-top: 0;
+                li {
+                    font-size: 1em;
+                    margin: 0 10px;
+                }
+            }
+        }
+        header {
+            h1 {
+                font-size: 3em
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+        } 
+    }
+    #content {
+        width: inherit;
+        #products, #testimonials {
+            width:46%;
+            margin:0 2%;
+        }
+    }
+}
+
+@mixin mediaScreenMW767px {
+    main {
+        width: 460px;
+        nav {
+            ul {
+                li {
+                    font-size: 0.8em;
+                    margin: 0 5px;
+                }
+            }
+        }
+        header {
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1em;
+            }
+            h3 {
+                font-size: 1.5em;
+            }
+            img {
+                margin-bottom: 100px;
+            }
+        }
+    }
+    #headline {
+        h1 {
+            font-size: 2em;
+            padding-top: 50px;
+        }
+    }
+    #content {
+        #products, #testimonials {
+            @include contentProductTestimonials;
+        }
+    }
+}
+
+
+@mixin mediaScreenMW459px {
+    main {
+        width: 300px;
+        figure {
+            background-size: contain;
+            height: 100px;
+        }
+        nav {margin-bottom: 40px !important;}
+        select {width: 95%;}
+        header {
+            img {margin-bottom: 80px;}
+            h1 {&:first-child {font-size: $ms459pxFontSizeh1_h2;margin-bottom: 20px;}}
+            h2{font-size: $ms459pxFontSizeh1_h2;}
+            h3{color: $white;font-size: 1em;}
+        }
+    }
+    #headline {
+        h1 {
+            font-size: 1.5em;
+            padding-top: 30px;
+        }
+    }
+    #content {
+        h3 {
+            font-size: 1.6em;
+        }
+    }
+    footer {
+        text-align: center;
+        p,img {
+            float: none;
+        }
+    }
+}

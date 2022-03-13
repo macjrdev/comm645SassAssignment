@@ -1,0 +1,8 @@
+
+.greybar {
+    @include coloredBar;
+}
+
+footer {
+    @include footerSocial;
+}

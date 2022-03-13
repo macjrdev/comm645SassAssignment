@@ -1,0 +1,16 @@
+@media screen and (max-width:959px) {
+    @include mediaScreenMW959px;
+}
+
+@media screen and (max-width:767px) {
+    @include mediaScreenMW767px;
+}
+
+@media screen and (max-width:459px) {
+    @include mediaScreenMW459px;
+    .greybar{display:none;}
+
+    article {
+        img {@extend .greybar;}
+    } 
+}

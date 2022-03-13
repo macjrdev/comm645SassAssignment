@@ -1,0 +1,13 @@
+figure {
+    background:url('../images/logo.png') no-repeat 0 50px;
+    float: left;
+    display: block;
+    margin: 0;
+    width:400px;
+    height:190px;
+}
+
+
+nav {
+    @include nav;
+}

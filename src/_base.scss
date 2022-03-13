@@ -1,0 +1,13 @@
+body {
+    @include line-height(2em);
+    font-family: $bodyFont, sans-serif;
+    background:url('../images/bg.gif') $white repeat-x;
+    font-size:1em;
+    margin:0;
+}
+
+main {
+    width:940px;
+    margin:0 auto;
+    padding:0 10px;
+}
